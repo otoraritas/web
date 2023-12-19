@@ -15,7 +15,6 @@ function sendMessage() {
             appendMessage('USER', userMessage, 'user-message');
             let botResponse = '';
 
-            simulateTyping('CHATBOT', 'Tunggu 1 abad...');
 
             switch (userMessage.toLowerCase()) {
                 case 'menu':
@@ -38,14 +37,14 @@ function sendMessage() {
                             botResponse = 'Maaf, terjadi kesalahan.';
                         })
                         .finally(() => {
-                            simulateTyping('CHATBOT', botResponse);
+                            simulateTyping('DCM.X-505', botResponse);
                             userInput.value = '';
                             sendButton.textContent = 'Send';
                         });
                     return;
             }
 
-            simulateTyping('CHATBOT', botResponse);
+            simulateTyping('DCM.X-505', botResponse);
             userInput.value = '';
             sendButton.textContent = 'Send';
         }
